@@ -19,7 +19,6 @@ init:    li     x15,LEDS      # put output address into register
          csrrw  x0,mie,x10    # enable interrupts
 
 loop:    nop                  # do nothing (easier to see in simulator)
-         otter  zero,zero,zero
          beq    x8,x0,loop    # wait for interrupt
 
          xori   x20,x20,1     # toggle current LED value
@@ -35,12 +34,3 @@ loop:    nop                  # do nothing (easier to see in simulator)
 ISR:     li     x8,1          # set flag to non-zero
          mret                 # return from interrupt
 #-----------------------------------------------------------------------
-
-# Instructions to be tested:
-# otter.ia	zero,zero,0x31
-# otter.ib	zero,zero,0x31
-# otter.ic	zero,0x31(zero)
-# otter.s	zero,0x31(zero)
-# otter.b	zero,zero,0x31
-# otter.u	zero,0x31
-# otter.j	zero,0x31
