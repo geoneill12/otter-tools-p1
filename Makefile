@@ -15,9 +15,9 @@ ASP_OBJ_FILES := $(patsubst src/%.S,build/%.o,$(ASP_FILES))
 
 # settings for the compilers
 ifneq ($(C_FILES),)
-RISCV_PREFIX = /home/student/Documents/riscv-gnu-toolchain/build/bin/riscv32-unknown-elf-
+RISCV_PREFIX = <exe_path>riscv32-unknown-elf-
 else
-RISCV_PREFIX = /home/student/Documents/riscv-gnu-toolchain/build/bin/riscv32-unknown-elf-
+RISCV_PREFIX = <exe_path>riscv32-unknown-elf-
 endif
 CC = $(RISCV_PREFIX)gcc
 LD = $(RISCV_PREFIX)ld
